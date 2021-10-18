@@ -20,11 +20,9 @@
   },
   "homepage": "https://github.com/MaziveVelocity/social-media-api#readme",
   "dependencies": {
-    "dateformat": "^3.0.3",
     "express": "^4.17.1",
     "luxon": "^2.0.2",
-    "mongoose": "^5.13.10",
-    "remove": "^0.1.5"
+    "mongoose": "^5.13.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
