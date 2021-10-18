@@ -1,5 +1,5 @@
 const { Schema, Types, model } = require('mongoose');
-const format = require('date-format');
+const { DateTime } = require('luxon');
 
 const reactionSchema = new Schema({
     reactionID: {
@@ -16,9 +16,9 @@ const reactionSchema = new Schema({
         required: true
     },
     createdAt: {
-        type: new Date,
+        type: Date,
         default: Date.now,
-        get: createdAtVal => format(createdAtVal)
+        get: createdAtVal => createdAtVal.toLocaleString(DateTime.DATE_FULL)
     }
 }, {
     toJSON: {
@@ -35,9 +35,9 @@ const thoughtSchema = new Schema({
         min: 1
     },
     createdAt: {
-        type: new Date,
+        type: Date,
         default: Date.now,
-        get: createdAtVal => format(createdAtVal)
+        get: createdAtVal => createdAtVal.toLocaleString(DateTime.DATE_FULL)
     },
     username: {
         type: String,
